@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
             } else if (item.getItemId() == R.id.cart) {
                 replaceFragement(new CartFragment());
             }
-
             return true;
         });
     }
