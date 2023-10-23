@@ -40,6 +40,5 @@
             android:textSize="26sp" />
 
     </LinearLayout>
-
-
+    
 </FrameLayout>
