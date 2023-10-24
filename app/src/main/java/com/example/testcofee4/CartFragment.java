@@ -13,6 +13,8 @@ import android.view.ViewGroup;
  * Use the {@link CartFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+
 public class CartFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -24,9 +26,15 @@ public class CartFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
+
+    
+
     public CartFragment() {
         // Required empty public constructor
     }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -35,7 +43,7 @@ public class CartFragment extends Fragment {
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
      * @return A new instance of fragment CartFragment.
-     */
+**/
     // TODO: Rename and change types and number of parameters
     public static CartFragment newInstance(String param1, String param2) {
         CartFragment fragment = new CartFragment();
