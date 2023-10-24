@@ -26,9 +26,15 @@ public class CartFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
+
+    
+
     public CartFragment() {
         // Required empty public constructor
     }
+
 
     /**
      * Use this factory method to create a new instance of
