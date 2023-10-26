@@ -49,7 +49,7 @@
         <!-- for scroll view -->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="600dp"
             android:layout_marginTop="12dp">
 
             <LinearLayout
@@ -61,6 +61,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
+                    <!--espresso card -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
@@ -77,14 +78,63 @@
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/espresso1"
                                 android:layout_gravity="center"/>
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
                                 android:text="Espresso"
-                                android:textSize="20sp"
                                 android:textColor="#212121"
-                                android:paddingTop="12sp"/>
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Rs.120"
+                                android:textColor="#212121"
+                                android:textSize="20sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_menu_remove_espresso"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/espresso_menu_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_menu_add_espresso"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+
 
                         </LinearLayout>
 
@@ -96,11 +146,432 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="" />
+                    <!--caramel card -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:cardElevation="12dp"
+                        app:cardBackgroundColor="#F9F9F9"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/caramel_frappucino"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Frappucino"
+                                android:textColor="#212121"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Rs.450"
+                                android:textColor="#212121"
+                                android:textSize="20sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_menu_remove_caramel"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/caramel_menu_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_menu_add_caramel"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
 
                     </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--espresso card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:cardElevation="12dp"
+                        app:cardBackgroundColor="#F9F9F9"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ice_coffee1"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Ice Coffee"
+                                android:textColor="#212121"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Rs.240"
+                                android:textColor="#212121"
+                                android:textSize="20sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_menu_remove_ice_coffee"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/ice_coffee_menu_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_menu_add_ice_coffee"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+                    <!--caramel card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:cardElevation="12dp"
+                        app:cardBackgroundColor="#F9F9F9"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/hot_chocolate"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Hot Choco."
+                                android:textColor="#212121"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Rs.300"
+                                android:textColor="#212121"
+                                android:textSize="20sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_menu_remove_hot_choco"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/hot_choco_menu_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_menu_add_hot_choco"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--espresso card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:cardElevation="12dp"
+                        app:cardBackgroundColor="#F9F9F9"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/mixed_black_coffee"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Mixed Black"
+                                android:textColor="#212121"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Rs.350"
+                                android:textColor="#212121"
+                                android:textSize="20sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_menu_remove_mixed_black"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/mixed_black_menu_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_menu_add_mixed_black"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+                    <!--caramel card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:cardElevation="12dp"
+                        app:cardBackgroundColor="#F9F9F9"
+                        android:layout_margin="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/espresso1"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Espresso2"
+                                android:textColor="#212121"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingTop="5sp"
+                                android:text="Rs.200"
+                                android:textColor="#212121"
+                                android:textSize="20sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                                <Button
+                                    android:id="@+id/btn_menu_remove_espresso2"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="2dp"
+                                    android:text="-"
+                                    android:textSize="20sp"/>
+                                <TextView
+                                    android:id="@+id/espresso2_menu_num_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"/>
+                                <Button
+                                    android:id="@+id/btn_menu_add_espresso2"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="#F8F8F8"
+                                    android:padding="5dp"
+                                    android:text="+"
+                                    android:textSize="20sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
 
                 </LinearLayout>
             </LinearLayout>

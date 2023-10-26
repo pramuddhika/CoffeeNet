@@ -151,19 +151,20 @@
                                 android:text="" />
                             <Button
                                 android:id="@+id/btn_remove_espresso"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
                                 android:text="-"
-                                android:textSize="20sp" />
+                                android:textSize="20sp"/>
                             <TextView
                                 android:id="@+id/espresso_num_view"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"/>
                             <Button
                                 android:id="@+id/btn_add_espresso"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -216,7 +217,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Caramal Fr."
+                                android:text="Frappucino"
                                 android:textSize="20sp"
                                 android:textColor="#212121"
                                 android:paddingTop="12sp"/>
@@ -247,7 +248,7 @@
                                 android:text="" />
                             <Button
                                 android:id="@+id/btn_remove_caramel"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -256,10 +257,11 @@
                             <TextView
                                 android:id="@+id/caramel_num_view"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"/>
                             <Button
                                 android:id="@+id/btn_add_caramel"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -343,7 +345,7 @@
                                 android:text="" />
                             <Button
                                 android:id="@+id/btn_remove_ice_coffee"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -352,10 +354,11 @@
                             <TextView
                                 android:id="@+id/ice_cofee_num_view"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"/>
                             <Button
                                 android:id="@+id/btn_add_ice_coffee"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -439,7 +442,7 @@
                                 android:text="" />
                             <Button
                                 android:id="@+id/btn_remove_hot_chocolate"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -448,10 +451,11 @@
                             <TextView
                                 android:id="@+id/hot_chocolate_num_view"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"/>
                             <Button
                                 android:id="@+id/btn_add_hot_chocolate"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -535,7 +539,7 @@
                                 android:text="" />
                             <Button
                                 android:id="@+id/btn_remove_mixed_black"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
@@ -544,10 +548,11 @@
                             <TextView
                                 android:id="@+id/mixd_black_num_view"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"/>
                             <Button
                                 android:id="@+id/btn_add_mixed_black"
-                                android:layout_width="wrap_content"
+                                android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:backgroundTint="#F8F8F8"
                                 android:padding="5dp"
