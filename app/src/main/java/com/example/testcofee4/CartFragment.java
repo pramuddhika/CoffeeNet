@@ -1,72 +1,83 @@
 package com.example.testcofee4;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CartFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import android.widget.Button;
+import androidx.lifecycle.Observer;
+import android.widget.TextView;
 
 
 public class CartFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-
-
-
-    
-
-    public CartFragment() {
-        // Required empty public constructor
-    }
-
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CartFragment.
-**/
-    // TODO: Rename and change types and number of parameters
-    public static CartFragment newInstance(String param1, String param2) {
-        CartFragment fragment = new CartFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    // Get a reference to the shared ViewModel using the activity scope
+    private EspressoViewModel viewModel = new EspressoViewModel();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        viewModel = new ViewModelProvider(requireActivity()).get(EspressoViewModel.class);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+        View view = inflater.inflate(R.layout.fragment_cart, container, false);
+
+        // Get references to the UI elements
+        Button btn_remove_espresso = view.findViewById(R.id.btn_remove_espresso);
+        Button btn_add_espresso = view.findViewById(R.id.btn_add_espresso);
+        TextView espresso_num_view = view.findViewById(R.id.espresso_num_view);
+        TextView sub_total = view.findViewById(R.id.sub_total);
+        TextView total = view.findViewById(R.id.total);
+        CardView espresso_card = view.findViewById(R.id.espresso_card);
+
+        // Set up listeners for the buttons
+        btn_remove_espresso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the removeEspresso method from the ViewModel
+                viewModel.removeEspresso();
+            }
+        });
+
+        btn_add_espresso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the addEspresso method from the ViewModel
+                viewModel.addEspresso();
+            }
+        });
+
+        // Observe the numberOfEspresso data from the ViewModel and update the UI accordingly
+        viewModel.getNumberOfEspresso().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the espresso_num_view to the number of espresso
+                espresso_num_view.setText(String.valueOf(integer));
+                // Hide the espresso_card if the number of espresso is zero
+                if (integer == 0) {
+                    espresso_card.setVisibility(View.GONE);
+                } else {
+                    espresso_card.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        // Observe the totalAmount data from the ViewModel and update the UI accordingly
+        viewModel.getTotalAmount().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the sub_total and total to the total amount
+                sub_total.setText(String.valueOf(integer));
+                total.setText(String.valueOf(integer));
+            }
+        });
+
+        return view;
     }
 }
