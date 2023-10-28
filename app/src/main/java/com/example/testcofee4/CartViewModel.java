@@ -166,7 +166,7 @@ public class CartViewModel extends ViewModel {
     }
     /////////Decrease the number of espresso2 by one and update the total amount/////////////////////
     public void removeEspresso2() {
-        if (numberOfEspresso.getValue() > 0) {
+        if (numberOfEspresso2.getValue() > 0) {
             numberOfEspresso2.setValue(numberOfEspresso2.getValue() - 1);
             totalAmount.setValue( (numberOfEspresso.getValue() * priceOfEspresso) + (numberOfCaramel.getValue() * priceOfCaramel) +
                     (numberOfIceCoffee.getValue() * priceOfIceCoffee) + (numberOfHotChoco.getValue() * priceOfHotChoco)+
