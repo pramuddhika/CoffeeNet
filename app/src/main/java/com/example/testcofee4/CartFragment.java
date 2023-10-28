@@ -49,6 +49,24 @@ public class CartFragment extends Fragment {
         TextView ice_coffee_num_view = view.findViewById(R.id.ice_cofee_num_view);
         CardView ice_coffee_card = view.findViewById(R.id.ice_coffee_card);
 
+        /////////////////// Get references to the UI elements for hot choco/////////////////////////
+        Button btn_remove_hot_choco = view.findViewById(R.id.btn_remove_hot_chocolate);
+        Button btn_add_hot_choco = view.findViewById(R.id.btn_add_hot_chocolate);
+        TextView hot_choco_num_view = view.findViewById(R.id.hot_chocolate_num_view);
+        CardView hot_choco_card = view.findViewById(R.id.hot_chocolate_card);
+
+        /////////////////// Get references to the UI elements for mixed black/////////////////////////
+        Button btn_remove_mixed_black = view.findViewById(R.id.btn_remove_mixed_black);
+        Button btn_add_mixed_black = view.findViewById(R.id.btn_add_mixed_black);
+        TextView black_mixed_num_view = view.findViewById(R.id.mixd_black_num_view);
+        CardView mixed_black_card = view.findViewById(R.id.mixed_black_card);
+
+        /////////////////// Get references to the UI elements for espresso/////////////////////////
+        Button btn_remove_espresso2 = view.findViewById(R.id.btn_remove_espresso2);
+        Button btn_add_espresso2 = view.findViewById(R.id.btn_add_espresso2);
+        TextView espresso2_num_view = view.findViewById(R.id.espresso2_num_view);
+        CardView espresso2_card = view.findViewById(R.id.espresso2_card);
+
         //////////Get references to the UI elements for total amount and order button///////////////
         TextView sub_total = view.findViewById(R.id.sub_total);
         TextView total = view.findViewById(R.id.total);
@@ -57,7 +75,7 @@ public class CartFragment extends Fragment {
         ///////////////////Get reference to the UI element for empty card///////////////////////////
         CardView empty_card = view.findViewById(R.id.empty_card);
 
-        ////////////////////Set up listeners for the buttons for espresso///////////////////////////
+        ////////////////////Set up listeners for the buttons for espresso//////////////////////////
         btn_remove_espresso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +126,57 @@ public class CartFragment extends Fragment {
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
 
+        ////////////////////Set up listeners for the buttons for hot choco//////////////////////////
+        btn_remove_hot_choco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the removeEspresso method from the ViewModel
+                viewModel.removeHotChoco();
+            }
+        });
+        btn_add_hot_choco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the addEspresso method from the ViewModel
+                viewModel.addHotChoco();
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        ////////////////////Set up listeners for the buttons for mixed black//////////////////////////
+        btn_remove_mixed_black.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the removeEspresso method from the ViewModel
+                viewModel.removeMixedBlack();
+            }
+        });
+        btn_add_mixed_black.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the addEspresso method from the ViewModel
+                viewModel.addMixedBlack();
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+        ////////////////////Set up listeners for the buttons for espresso2//////////////////////////
+        btn_remove_espresso2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the removeEspresso method from the ViewModel
+                viewModel.removeEspresso2();
+            }
+        });
+        btn_add_espresso2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the addEspresso method from the ViewModel
+                viewModel.addEspresso2();
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
         //////////////////////////Set up listener for the order button//////////////////////////////
         btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +185,9 @@ public class CartFragment extends Fragment {
                 viewModel.getNumberOfEspresso().setValue(0);
                 viewModel.getNumberOfCaramel().setValue(0);
                 viewModel.getNumberOfIceCoffee().setValue(0);
+                viewModel.getNumberOfHotChoco().setValue(0);
+                viewModel.getNumberOfMixedBlack().setValue(0);
+                viewModel.getNumberOfEspresso2().setValue(0);
                 viewModel.getTotalAmount().setValue(0);
                 // Move to the ThankActivity activity page using an intent
                 Intent intent = new Intent(getActivity(), ThankActivity.class);
@@ -153,13 +225,13 @@ public class CartFragment extends Fragment {
                 }
             }
         });
-        // Observe the numberOfEspresso data from the ViewModel and update the UI accordingly//////
+        // Observe the numberOfIceCoffee data from the ViewModel and update the UI accordingly//////
         viewModel.getNumberOfIceCoffee().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                // Set the text of the espresso_num_view to the number of espresso
+                // Set the text of the ice_coffee_num_view to the number of espresso
                 ice_coffee_num_view.setText(String.valueOf(integer));
-                // Hide the espresso_card if the number of espresso is zero
+                // Hide the ice_coffee_card if the number of espresso is zero
                 if (integer == 0) {
                     ice_coffee_card.setVisibility(View.GONE);
                 } else {
@@ -167,6 +239,66 @@ public class CartFragment extends Fragment {
                 }
             }
         });
+
+        // Observe the numberOfHotChoco data from the ViewModel and update the UI accordingly//////
+        viewModel.getNumberOfHotChoco().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the hot_choco_num_view to the number of espresso
+                hot_choco_num_view.setText(String.valueOf(integer));
+                // Hide the hot_choco_card if the number of espresso is zero
+                if (integer == 0) {
+                    hot_choco_card.setVisibility(View.GONE);
+                } else {
+                    hot_choco_card.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        // Observe the numberOfMixedBlack data from the ViewModel and update the UI accordingly//////
+        viewModel.getNumberOfMixedBlack().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the mixed_black_num_view to the number of espresso
+                black_mixed_num_view.setText(String.valueOf(integer));
+                // Hide the mixed_black_card if the number of espresso is zero
+                if (integer == 0) {
+                    mixed_black_card.setVisibility(View.GONE);
+                } else {
+                    mixed_black_card.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        // Observe the numberOfEspresso2 data from the ViewModel and update the UI accordingly//////
+        viewModel.getNumberOfEspresso2().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the espresso2_num_view to the number of espresso
+                espresso2_num_view.setText(String.valueOf(integer));
+                // Hide the espresso2_card if the number of espresso is zero
+                if (integer == 0) {
+                    espresso2_card.setVisibility(View.GONE);
+                } else {
+                    espresso2_card.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        // Observe the empty card data from the ViewModel and update the UI accordingly//////
+        viewModel.getTotalAmount().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Hide the empty card if the number of espresso is zero
+                if (integer == 0) {
+                    empty_card.setVisibility(View.VISIBLE);
+                } else {
+                    empty_card.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
 
         ///////Observe the totalAmount data from the ViewModel and update the UI accordingly////////
         viewModel.getTotalAmount().observe(getViewLifecycleOwner(), new Observer<Integer>() {

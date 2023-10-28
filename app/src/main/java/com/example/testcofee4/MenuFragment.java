@@ -42,6 +42,21 @@ public class MenuFragment extends Fragment {
         Button btn_menu_add_ice_coffee = view.findViewById(R.id.btn_menu_add_ice_coffee);
         TextView ice_coffee_menu_num_view = view.findViewById(R.id.ice_coffee_menu_num_view);
 
+        // /////////////////Get references to the UI elements for hot choco//////////////////////
+        Button btn_menu_remove_hot_choco = view.findViewById(R.id.btn_menu_remove_hot_choco);
+        Button btn_menu_add_hot_choco = view.findViewById(R.id.btn_menu_add_hot_choco);
+        TextView hot_choco_menu_num_view = view.findViewById(R.id.hot_choco_menu_num_view);
+
+        // /////////////////Get references to the UI elements for mixed black//////////////////////
+        Button btn_menu_remove_mixed_black = view.findViewById(R.id.btn_menu_remove_mixed_black);
+        Button btn_menu_add_mixed_black = view.findViewById(R.id.btn_menu_add_mixed_black);
+        TextView mixed_black_menu_num_view = view.findViewById(R.id.mixed_black_menu_num_view);
+
+        // /////////////////Get references to the UI elements for espresso2//////////////////////
+        Button btn_menu_remove_espresso2 = view.findViewById(R.id.btn_menu_remove_espresso2);
+        Button btn_menu_add_espresso2 = view.findViewById(R.id.btn_menu_add_espresso2);
+        TextView espresso2_menu_num_view = view.findViewById(R.id.espresso2_menu_num_view);
+
         /////////////////// Set up listeners for the buttons for espresso/////////////////////////
         btn_menu_remove_espresso.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +105,56 @@ public class MenuFragment extends Fragment {
             }
         });
 
+        /////////////////// Set up listeners for the buttons for hot choco/////////////////////////
+        btn_menu_remove_hot_choco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the removeEspresso method from the ViewModel
+                viewModel.removeHotChoco();
+            }
+        });
+        btn_menu_add_hot_choco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the addEspresso method from the ViewModel
+                viewModel.addHotChoco();
+            }
+        });
+
+        /////////////////// Set up listeners for the buttons for mixed black/////////////////////////
+        btn_menu_remove_mixed_black.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the removeEspresso method from the ViewModel
+                viewModel.removeMixedBlack();
+            }
+        });
+        btn_menu_add_mixed_black.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the addEspresso method from the ViewModel
+                viewModel.addMixedBlack();
+            }
+        });
+
+        /////////////////// Set up listeners for the buttons for espresso2/////////////////////////
+        btn_menu_remove_espresso2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the removeEspresso method from the ViewModel
+                viewModel.removeEspresso2();
+            }
+        });
+        btn_menu_add_espresso2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call the addEspresso method from the ViewModel
+                viewModel.addEspresso2();
+            }
+        });
+
+
+
         ////// Observe the numberOfEspresso data from the ViewModel and update the UI accordingly///
         viewModel.getNumberOfEspresso().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
@@ -114,6 +179,33 @@ public class MenuFragment extends Fragment {
             public void onChanged(Integer integer) {
                 // Set the text of the espresso_menu_num_view to the number of espresso
                 ice_coffee_menu_num_view.setText(String.valueOf(integer));
+            }
+        });
+
+        ////// Observe the numberOfHotChoco data from the ViewModel and update the UI accordingly///
+        viewModel.getNumberOfHotChoco().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the espresso_menu_num_view to the number of espresso
+                hot_choco_menu_num_view.setText(String.valueOf(integer));
+            }
+        });
+
+        ////// Observe the numberOfMixedBlack data from the ViewModel and update the UI accordingly///
+        viewModel.getNumberOfMixedBlack().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the espresso_menu_num_view to the number of espresso
+                mixed_black_menu_num_view.setText(String.valueOf(integer));
+            }
+        });
+
+        ////// Observe the numberOfEspresso2 data from the ViewModel and update the UI accordingly///
+        viewModel.getNumberOfEspresso2().observe(getViewLifecycleOwner(), new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                // Set the text of the espresso_menu_num_view to the number of espresso
+                espresso2_menu_num_view.setText(String.valueOf(integer));
             }
         });
 

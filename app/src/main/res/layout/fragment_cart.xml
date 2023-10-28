@@ -576,7 +576,7 @@
 
             <!--cart for espresso2 -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/espresso_card2"
+                android:id="@+id/espresso2_card"
                 android:layout_width="match_parent"
                 android:padding="10dp"
                 android:layout_height="wrap_content"
