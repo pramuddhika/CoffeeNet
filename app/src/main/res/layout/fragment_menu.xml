@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFF"
+    android:background="#F5F0E1"
     android:layout_height="match_parent"
     android:padding="20dp"
     tools:context=".MenuFragment">
@@ -42,7 +42,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Kindly select your preferred coffee type"
-                android:textSize="15sp"
+                android:textSize="20sp"
+                android:textColor="#000000"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -61,12 +62,19 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+
                     <!--espresso card -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        app:cardElevation="12dp"
+                        app:cardElevation="5dp"
                         app:cardBackgroundColor="#F9F9F9"
                         android:layout_margin="10dp">
                         <LinearLayout
@@ -152,7 +160,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        app:cardElevation="12dp"
+                        app:cardElevation="5dp"
                         app:cardBackgroundColor="#F9F9F9"
                         android:layout_margin="10dp">
                         <LinearLayout
@@ -227,6 +235,13 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+
 
                 </LinearLayout>
 
@@ -235,12 +250,19 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+
                     <!--ice coffee card -->
                     <androidx.cardview.widget.CardView
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        app:cardElevation="12dp"
+                        app:cardElevation="5dp"
                         app:cardBackgroundColor="#F9F9F9"
                         android:layout_margin="10dp">
                         <LinearLayout
@@ -325,7 +347,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        app:cardElevation="12dp"
+                        app:cardElevation="5dp"
                         app:cardBackgroundColor="#F9F9F9"
                         android:layout_margin="10dp">
                         <LinearLayout
@@ -395,17 +417,25 @@
                             </LinearLayout>
 
 
+
                         </LinearLayout>
 
 
                     </androidx.cardview.widget.CardView>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#F5F0E1"
                     android:orientation="horizontal">
 
                     <!--mixed black card -->
@@ -413,7 +443,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        app:cardElevation="12dp"
+                        app:cardElevation="5dp"
                         app:cardBackgroundColor="#F9F9F9"
                         android:layout_margin="10dp">
                         <LinearLayout
@@ -498,7 +528,7 @@
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
-                        app:cardElevation="12dp"
+                        app:cardElevation="5dp"
                         app:cardBackgroundColor="#F9F9F9"
                         android:layout_margin="10dp">
                         <LinearLayout
@@ -573,6 +603,12 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
 
                 </LinearLayout>
             </LinearLayout>
