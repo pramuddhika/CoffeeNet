@@ -3,32 +3,186 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F0E1"
     tools:context=".HomeFragment">
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:background="@drawable/top_background_gradient">
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="250dp"
-            android:background="@drawable/top_background">
+            android:layout_height="200dp"
+            android:background="@drawable/top_background"
+            android:orientation="horizontal">
+            <ImageView
+                android:padding="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile"/>
 
             <LinearLayout
-                android:layout_width="280dp"
-                android:layout_height="180dp"
-                android:layout_marginTop="100dp"
-                android:layout_gravity="center"
-                android:background="@drawable/discount_background">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coffee Net"
+                    android:textSize="40dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:paddingTop="40dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello Sala"
+                    android:textSize="25sp"
+                    android:paddingLeft="10dp"
+                    android:textColor="#ffff"/>
 
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            android:layout_marginTop="200dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="125dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Coffee Net"
+                    android:textColor="#710F0F"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textAlignment="center"
+                    android:text="Our vision is to be the ultimate destination for coffee enthusiasts and create a vibrant community of coffee lovers. Our aim is to be the go-to coffee shop where every cup brewed brings people together, and redefines the coffee experience."
+                    android:textStyle="bold"
+                    tools:layout_marginStart="10dp"/>
+
+                <!--///////////////////////////////image slider///////////////////////////////-->
+
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/image_slider"
+                    android:layout_width="280dp"
+                    android:layout_height="150dp"
+                    app:iss_auto_cycle="true"
+                    app:iss_period="1000"
+                    app:iss_delay="1000"
+                    app:iss_text_align="CENTER"/>
+
+                <!--/////////////////////////////end - image slider///////////////////////////////-->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_margin="10dp"
+                        app:cardBackgroundColor="#F5F0E1">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:textAlignment="center"
+                                android:text="Opening Hours"
+                                android:textColor="#602020"
+                                android:textSize="23sp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="8dp"
+                                android:text="Monday: 7:00 AM - 9:00 PM \nTuesday: 7:00 AM - 9:00 PM \nWednesday: 7:00 AM - 9:00 PM \nThursday: 7:00 AM - 9:00 PM \nFriday: 7:00 AM - 10:00 PM \nSaturday: 8:00 AM - 10:00 PM \nSunday: 8:00 AM - 8:00 PM"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_margin="10dp"
+                        app:cardBackgroundColor="#F5F0E1">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:textAlignment="center"
+                                android:text="Get in Touch"
+                                android:textColor="#602020"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:padding="5sp"
+                                android:text="Coffee Net, \n123A, \nGalle Road,\nColombo 05, \nSri Lanka \n+94 77 123 4567"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
 
 
 

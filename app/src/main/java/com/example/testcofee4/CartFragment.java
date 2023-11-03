@@ -289,7 +289,7 @@ public class CartFragment extends Fragment {
         viewModel.getTotalAmount().observe(getViewLifecycleOwner(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
-                // Hide the empty card if the number of espresso is zero
+                // Hide the empty card if the number of total amount is zero
                 if (integer == 0) {
                     empty_card.setVisibility(View.VISIBLE);
                 } else {
