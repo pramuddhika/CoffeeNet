@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.core:core:1.12.0")
     testImplementation("junit:junit:4.13.2")
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation ("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
     implementation ("androidx.lifecycle:lifecycle-livedata:2.6.2")
     implementation ("androidx.cardview:cardview:1.0.0")
