@@ -6,4 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".Loading3">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/loading"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="46sp"
+            android:layout_marginTop="93dp"
+            android:layout_marginStart="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Get ready for the "/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="46sp"
+                android:layout_marginStart="25sp"
+                android:textColor="@color/white"
+                android:text="newest "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="46sp"
+                android:textStyle="bold"
+                android:textColor="#E38B47"
+                android:text="coffee"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="10dp"
+            android:padding="15dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:text="Get ready to try the newest coffee variant with your friends"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:src="@drawable/status3"/>
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,6 @@ public class FristPage extends AppCompatActivity {
                 finish();
 
             }
-        },1000);
+        },1500);
     }
 }
