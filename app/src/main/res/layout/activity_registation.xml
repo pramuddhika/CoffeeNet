@@ -7,7 +7,8 @@
     android:background="#F5F0E1"
     tools:context=".Registation">
 
-    <Button
+
+<Button
         android:id="@+id/btn_login2"
         android:layout_width="322dp"
         android:layout_height="59dp"
@@ -125,7 +126,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/text_Registernow2"
+        android:id="@+id/btn_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="180dp"
