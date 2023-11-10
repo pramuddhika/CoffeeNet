@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import android.content.Intent;
+import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -18,6 +20,8 @@ import androidx.lifecycle.ViewModelProvider;
 public class CartFragment extends Fragment {
     // Get a reference to the shared ViewModel using the activity scope
     private CartViewModel viewModel = new CartViewModel();
+
+    int totalForbtnOrder;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -177,24 +181,7 @@ public class CartFragment extends Fragment {
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
 
-        //////////////////////////Set up listener for the order button//////////////////////////////
-        btn_order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Reset the number of espresso and caramel to zero in the ViewModel
-                viewModel.getNumberOfEspresso().setValue(0);
-                viewModel.getNumberOfCaramel().setValue(0);
-                viewModel.getNumberOfIceCoffee().setValue(0);
-                viewModel.getNumberOfHotChoco().setValue(0);
-                viewModel.getNumberOfMixedBlack().setValue(0);
-                viewModel.getNumberOfEspresso2().setValue(0);
-                viewModel.getTotalAmount().setValue(0);
-                // Move to the ThankActivity activity page using an intent
-                Intent intent = new Intent(getActivity(), ThankActivity.class);
-                startActivity(intent);
-            }
-        });
-        ///////////////////////////////////////////////////////////////////////////////////////////
+
 
         // Observe the numberOfEspresso data from the ViewModel and update the UI accordingly//////
         viewModel.getNumberOfEspresso().observe(getViewLifecycleOwner(), new Observer<Integer>() {
@@ -291,12 +278,38 @@ public class CartFragment extends Fragment {
             public void onChanged(Integer integer) {
                 // Hide the empty card if the number of total amount is zero
                 if (integer == 0) {
+                    totalForbtnOrder = 0;
                     empty_card.setVisibility(View.VISIBLE);
                 } else {
+                    totalForbtnOrder = 1;
                     empty_card.setVisibility(View.GONE);
                 }
             }
         });
+
+        //////////////////////////Set up listener for the order button//////////////////////////////
+        btn_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(totalForbtnOrder==0){
+                    Toast.makeText(getContext(),"Cart is Empty!!!",Toast.LENGTH_SHORT).show();
+                }else {
+                    // Reset the number of espresso and caramel to zero in the ViewModel
+                    viewModel.getNumberOfEspresso().setValue(0);
+                    viewModel.getNumberOfCaramel().setValue(0);
+                    viewModel.getNumberOfIceCoffee().setValue(0);
+                    viewModel.getNumberOfHotChoco().setValue(0);
+                    viewModel.getNumberOfMixedBlack().setValue(0);
+                    viewModel.getNumberOfEspresso2().setValue(0);
+                    viewModel.getTotalAmount().setValue(0);
+                    // Move to the ThankActivity activity page using an intent
+                    Intent intent = new Intent(getActivity(), ThankActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+        ///////////////////////////////////////////////////////////////////////////////////////////
 
 
 
