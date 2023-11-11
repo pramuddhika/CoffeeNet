@@ -7,7 +7,7 @@
     android:background="#F5F0E1"
     android:padding="20dp"
     tools:context=".CartFragment">
-
+    <!-- IM/2020/106 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Loading2">
-
+    <!-- IM/2020/106 -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
