@@ -13,7 +13,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 
 import java.util.ArrayList;
-
+//IM/2020/037
 
 public class HomeFragment extends Fragment {
 

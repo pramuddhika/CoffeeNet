@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F5F0E1"
     tools:context=".Registation">
-
+    <!-- IM/2020/042 -->
 
 <Button
         android:id="@+id/btn_login2"

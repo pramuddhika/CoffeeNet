@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
-
+//IM/2020/106
 public class Loading3 extends AppCompatActivity {
 
     Timer timer;
